@@ -16,3 +16,16 @@ CREATE TABLE `tl_news_archive` (
   `sitemapPages` blob NULL,
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table `tl_news`
+-- 
+
+CREATE TABLE `tl_news` (
+  `sitemap_lastmod` varchar(11) NOT NULL default '',
+  `sitemap_changefreq` varchar(10) NOT NULL default '',
+  `sitemap_priority` varchar(3) NOT NULL default '',
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+

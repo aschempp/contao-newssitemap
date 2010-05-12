@@ -29,7 +29,7 @@
 class NewsSitemap extends Backend
 {
 	
-	protected function getNewsOptions($arrPages, $domain)
+	public function getNewsOptions($arrPages, $domain)
 	{
 		$arrCompleted = array();
 		$objArchives = $this->Database->execute("SELECT a.*, n.tstamp AS lastmod, n.headline FROM tl_news_archive a LEFT OUTER JOIN tl_news n ON a.id=n.pid WHERE sitemap='1' ORDER BY n.tstamp DESC");
@@ -71,9 +71,9 @@ class NewsSitemap extends Backend
 					{
 						$strUrl = $domain . $this->generateFrontendUrl($objJumpTo->row(), '/items/' . $objNews->alias);
 					
-						$arrPages[$strUrl]['sitemap_lastmod'] = $objNews->tstamp;
-						$arrPages[$strUrl]['sitemap_changefreq'] = $objJumpTo->sitemap_changefreq;
-						$arrPages[$strUrl]['sitemap_priority'] = $objJumpTo->sitemap_priority;
+						$arrPages[$strUrl]['sitemap_lastmod'] = $objNews->sitemap_lastmod ? $objNews->sitemap_lastmod : $objNews->tstamp;
+						$arrPages[$strUrl]['sitemap_changefreq'] = $objNews->sitemap_changefreq ? $objNews->sitemap_changefreq : $objJumpTo->sitemap_changefreq;
+						$arrPages[$strUrl]['sitemap_priority'] = $objNews->sitemap_priority ? $objNews->sitemap_priority : $objJumpTo->sitemap_priority;
 					}
 				}
 			}

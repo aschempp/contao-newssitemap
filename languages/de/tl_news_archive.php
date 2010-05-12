@@ -28,7 +28,7 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_news_archive']['sitemap'] 			= array('Im XML-Sitemap berücksichtigen', 'Klicken Sie hier um dieses News-Archiv im XML-Sitemap zu berücksichtigen.');
+$GLOBALS['TL_LANG']['tl_news_archive']['sitemap'] 			= array('In der XML-Sitemap berücksichtigen', 'Klicken Sie hier um dieses News-Archiv im XML-Sitemap zu berücksichtigen.');
 $GLOBALS['TL_LANG']['tl_news_archive']['sitemapPages']		= array('Berücksichtigte Seiten', 'Wählen Sie die Seiten auf welchen dieses News-Archiv sichtbar ist, und deren Änderungsdatum die News berücksichtigen soll.');
 
 
